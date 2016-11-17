@@ -29,7 +29,7 @@ int main() {
 
 /*
  Solution:
- 7273
+ 4613732
  
  real 0m0.004s
  user 0m0.000s
