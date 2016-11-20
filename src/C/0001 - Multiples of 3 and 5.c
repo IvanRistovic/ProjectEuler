@@ -10,15 +10,15 @@
 #define LIMIT 1000
 
 int main() {
-    unsigned s = 0, i;
+	unsigned s = 0, i;
     
-    for (i = 3; i < LIMIT; i++)
-        if (i % 3 == 0 || i % 5 == 0)
-            s += i;
+	for (i = 3; i < LIMIT; i++)
+		if (i % 3 == 0 || i % 5 == 0)
+		s += i;
         
-    printf("%d\n", s);
+	printf("%d\n", s);
         
-    return 0;
+	return 0;
 }
 
 /*

@@ -8,19 +8,20 @@
 #include <stdio.h>
 
 int main() {
-    unsigned long long int i, x = 600851475143;
-    unsigned long long int lpf = 1;
+	unsigned long long int i, x = 600851475143;
+	unsigned long long int lpf = 1;
     
-    for (i = 2; i < x; i++) {
-        while (x % i == 0) {
-            x /= i;
-            if (i > lpf)
-                lpf = i;
-        }
-    }
-    printf("%llu\n", x);
-    
-    return 0;
+	for (i = 2; i < x; i++) {
+		while (x % i == 0)
+			x /= i;
+
+		if (i > lpf)
+			lpf = i;
+	}
+	
+	printf("%llu\n", x);
+
+	return 0;
 }
 
 /*

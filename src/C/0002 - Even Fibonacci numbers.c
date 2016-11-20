@@ -12,19 +12,20 @@
 #define LIMIT 4000000
 
 int main() {
-    int f1 = 1, f2 = 2, f3 = 3;
-    int sum = 2;
+	int f1 = 1, f2 = 2, f3 = 3;
+	int sum = 2;
     
-    while (f3 < LIMIT) {
-        f1 = f2;
-        f2 = f3;
-        f3 = f1 + f2;
-        if (f3 % 2 == 0)
-            sum += f3;
-    }
-    printf("%d\n", sum);
+	while (f3 < LIMIT) {
+		f1 = f2;
+		f2 = f3;
+		f3 = f1 + f2;
+		if (f3 % 2 == 0)
+			sum += f3;
+	}
     
-    return 0;
+	printf("%d\n", sum);
+    
+	return 0;
 }
 
 /*
