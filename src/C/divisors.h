@@ -13,19 +13,19 @@
 #include "primes.h"
 
 
-    /* --- FUNCTIONS --- */
+	/* --- FUNCTIONS --- */
 
 int div_num(unsigned number);
-    /* returns number of all divisors of 'number' */
-    
-int div_sum(unsigned number);
-    /* returns sum of all divisors of 'number' */
+	/* returns number of all divisors of 'number' */
 
-    
-    
-    // TODO, check some problem there is a function of REAL divisors?
-    
-    
-    
-    
+int div_sum(unsigned number);
+	/* returns sum of all divisors of 'number' */
+
+
+
+	// TODO, check some problem there is a function of REAL divisors?
+
+
+
+
 #endif
