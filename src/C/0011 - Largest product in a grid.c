@@ -1,7 +1,7 @@
 /*
  Problem 11
  In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
- 
+
  08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
  49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
  81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -22,9 +22,9 @@
  20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
  20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
  01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
- 
+
  The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
- 
+
  What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 */
 
@@ -34,55 +34,56 @@
 #define MAX 26
 
 int main() {
-    FILE *f = fopen("0011.txt", "r");
-    int m[MAX][MAX];
-    int i = 0, j = 0;
-    int pr = 1, maxpr = 0;
-    
-    /* idea is to make a 3 layer wrap of 1s around matrix, like:
-            1 1 1 1 1
-            1 x x x 1
-            1 x x x 1
-            1 1 1 1 1
-       but with 3 layers, so there will be no ifs inside main loops */
-    
-    for (i = 0; i < MAX; i++)
-        for (j = 0; j < MAX; j++)
-            if (i < 3 || i > MAX - 4 || j < 3 || j > MAX - 4)
-                m[i][j] = 1;
-            else 
-                fscanf(f, "%d", &m[i][j]);
-    fclose(f);
-    
-    for (i = 3; i < MAX - 4; i++)
-        for (j = 3; j < MAX - 4; j++) {
-            // left - right
-            pr = m[i][j] * m[i][j-1] * m[i][j-2] * m[i][j-3];
-            if (pr > maxpr) 
-                maxpr = pr;
-            // up - down
-            pr = m[i][j] * m[i-1][j] * m[i-2][j] * m[i-3][j];
-            if (pr > maxpr) 
-                maxpr = pr;
-            // up-left - down-right
-            pr = m[i][j] * m[i-1][j-1] * m[i-2][j-2] * m[i-3][j-3];
-            if (pr > maxpr) 
-                maxpr = pr;
-            // up-right - down-left
-            pr = m[i][j] * m[i-1][j+1] * m[i-2][j+2] * m[i-3][j+3];
-            if (pr > maxpr) 
-                maxpr = pr;
-        }
-        
-    printf("%d\n", maxpr);
-        
-    return 0;
+	FILE *f = fopen("0011.txt", "r");
+	int m[MAX][MAX];
+	int i = 0, j = 0;
+	int pr = 1, maxpr = 0;
+
+	/* idea is to make a 3 layer wrap of 1s around matrix, like:
+			1 1 1 1 1
+		 	1 x x x 1
+			1 x x x 1
+			1 1 1 1 1
+		but with 3 layers, so there will be no ifs inside main loops */
+
+	for (i = 0; i < MAX; i++)
+		for (j = 0; j < MAX; j++)
+			if (i < 3 || i > MAX - 4 || j < 3 || j > MAX - 4)
+				m[i][j] = 1;
+			else
+				fscanf(f, "%d", &m[i][j]);
+	fclose(f);
+
+	for (i = 3; i < MAX - 4; i++) {
+		for (j = 3; j < MAX - 4; j++) {
+			// left - right
+			pr = m[i][j] * m[i][j-1] * m[i][j-2] * m[i][j-3];
+			if (pr > maxpr)
+				maxpr = pr;
+			// up - down
+			pr = m[i][j] * m[i-1][j] * m[i-2][j] * m[i-3][j];
+			if (pr > maxpr)
+				maxpr = pr;
+			// up-left - down-right
+			pr = m[i][j] * m[i-1][j-1] * m[i-2][j-2] * m[i-3][j-3];
+			if (pr > maxpr)
+				maxpr = pr;
+			// up-right - down-left
+			pr = m[i][j] * m[i-1][j+1] * m[i-2][j+2] * m[i-3][j+3];
+			if (pr > maxpr)
+				maxpr = pr;
+		}
+	}
+
+	printf("%d\n", maxpr);
+
+	return 0;
 }
 
 /*
  Solution:
  70600674
- 
+
  real 0m0.003s
  user 0m0.000s
  sys  0m0.000s
