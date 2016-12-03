@@ -10,7 +10,32 @@
 # letters. The use of "and" when writing out numbers is in compliance with
 # British usage.
 
+# ATTENTION this is so boring problem, so this is a copy-paste of C solution
 
+
+AND = 3
+HUNDRED = 7
+ONETHOUSAND = 11
+
+ones = [0, 3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8]
+tenths = [0, 3, 6, 6, 5, 5, 5, 7, 6, 6]
+sum = 0
+
+for i in range(1, 1000):
+	a = i / 100;
+	b = i / 10 % 10
+	c = i % 10
+	if a != 0:
+		sum += ones[a] + HUNDRED
+		if b != 0 or c != 0:
+			sum += AND
+	if b == 0 or b == 1:
+		sum += ones[b * 10 + c]
+	else:
+		sum += tenths[b] + ones[c]
+
+sum += ONETHOUSAND
+print sum
 
 # Solution:
 # 21124
