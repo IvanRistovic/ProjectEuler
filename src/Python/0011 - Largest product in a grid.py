@@ -1,9 +1,10 @@
 # Problem 11
-# In the 20x20 grid below, four numbers along a diagonal line have been marked in red.
+# In the 20x20 grid below, four numbers along a diagonal line have been marked.
 # (check 0011.txt)
 # The product of these numbers is 26 x 63 x 78 x 14 = 1788696.
 #
-# What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20x20 grid?
+# What is the greatest product of four adjacent numbers in the same direction
+# (up, down, left, right, or diagonally) in the 20x20 grid?
 
 try:
 	with open("0011.txt", "r") as f:

@@ -1,6 +1,7 @@
 /*
  Problem 13
- Work out the first ten digits of the sum of the following one-hundred 50-digit numbers (see the 0013.txt)
+ Work out the first ten digits of the sum of the following one-hundred 50-digit
+ numbers (see the 0013.txt)
 */
 
 /* ATTENTION Compile with largenum.c */
