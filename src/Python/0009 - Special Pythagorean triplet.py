@@ -15,3 +15,6 @@ for a in range(1, 500):
 
 # Solution:
 # 31875000
+# real	0m0.049s
+# user	0m0.036s
+# sys	0m0.008s

@@ -22,48 +22,48 @@ typedef char prime_indicator;
 
 int PRIME_ARR_LEN;
 #define PRIME_ARR_SIZE PRIME_ARR_LEN
-    /* this variable is modified whenever generate_prime_array function is called
-       the new array size is stored here, for the user to use */
+	/* this variable is modified whenever generate_prime_array function is
+	called the new array size is stored here, for the user to use */
 
 
-    /* --- MACRO FUNCTIONS --- */
+	/* --- MACRO FUNCTIONS --- */
 
 #define is_prime(n) is_prime_i(n)
-    /* equivalent to is_prime_i */
+	/* equivalent to is_prime_i */
 
 
-    /* --- FUNCTIONS --- */
-    
+	/* --- FUNCTIONS --- */
+
 unsigned is_prime_u(unsigned number);
-    /* prime test for an unsigned number greater than 2, no argument checking */
+	/* prime test for an unsigned number greater than 2, no argument checking */
 
 int is_prime_i(int number);
-    /* prime test for a signed integer greater than 2, no argument checking */
+	/* prime test for a signed integer greater than 2, no argument checking */
 
 int is_prime_acc(int number);
-    /* accurate prime test for all integers
-       has a few more instructions than specialized functions
-       try not to call alot of times (noticeable difference shows for 100000 calls) */
+	/* accurate prime test for all integers
+	   has a few more instructions than specialized functions
+	   try not to call alot of times (noticeable difference shows for 100000 calls) */
 
 int is_prime_arr(prime_indicator *prime_array, unsigned number);
-    /* does a O(1) prime test if the prime_array from function below is provided
-       NOTE: THIS FUNCTION DOES NOT WORK FOR NUMBER 2 */    
+	/* does a O(1) prime test if the prime_array from function below is provided
+	   NOTE: THIS FUNCTION DOES NOT WORK FOR NUMBER 2 */
 
 int is_prime_arr_odd(prime_indicator *prime_array, unsigned odd_number);
-    /* same as the previous function, but skips the "is even" check */
-    
+	/* same as the previous function, but skips the "is even" check */
+
 prime_indicator* generate_prime_array(unsigned limit);
-    /* NOTE: length of the array is saved in PRIME_ARR_LEN
-          it can also be calculated using the following equation:
-            arr_size = 2*limit + 1;
-       generates char indicator array for every odd number if it is prime or not
-       the limit is the biggest number that will have it's indicator in array
-       the element at index i corresponds to number 2i+1, 1 if it is prime */
+	/* NOTE: length of the array is saved in PRIME_ARR_LEN
+		it can also be calculated using the following equation:
+			arr_size = 2*limit + 1;
+	generates char indicator array for every odd number if it is prime or not
+	the limit is the biggest number that will have it's indicator in array
+	the element at index i corresponds to number 2i+1, 1 if it is prime */
 
 prime_indicator* generate_prime_array_n(unsigned num_of_primes);
-    // TODO
+	// TODO
 
 unsigned find_prime(prime_indicator *prime_array, unsigned index);
-    /* returns index-th prime number */
+	/* returns index-th prime number */
 
 #endif

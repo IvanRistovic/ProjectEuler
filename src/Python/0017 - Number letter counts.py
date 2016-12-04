@@ -10,7 +10,7 @@
 # letters. The use of "and" when writing out numbers is in compliance with
 # British usage.
 
-# ATTENTION this is so boring problem, so this is a copy-paste of C solution
+# NOTE this is so boring problem, so this is a copy-paste of C solution
 
 
 AND = 3
@@ -39,3 +39,6 @@ print sum
 
 # Solution:
 # 21124
+# real	0m0.018s
+# user	0m0.004s
+# sys	0m0.008s

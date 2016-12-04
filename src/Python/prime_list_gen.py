@@ -11,7 +11,7 @@ def is_prime(number):
 
 
 try:
-	with open("prime_list.txt", "w") as f:
+	with open("../_txt/prime_list.txt", "w") as f:
 		f.write("2\n")
 		i = 3
 		while i < 2000000:

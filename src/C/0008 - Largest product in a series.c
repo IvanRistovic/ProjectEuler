@@ -37,12 +37,14 @@
 int main() {
 	char num[LEN + 1];
 
-	FILE *f = fopen("0008.txt", "r");
+	FILE *f = fopen("../_txt/0008.txt", "r");
 	int i = 0, j;
 	unsigned long long pr, maxpr = 0;
 
-	if (f == NULL)
+	if (f == NULL) {
+		perror("_txt/0008.txt");
 		exit(EXIT_FAILURE);
+	}
 	fscanf(f, "%s", num);
 	fclose(f);
 

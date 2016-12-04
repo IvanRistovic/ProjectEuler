@@ -11,12 +11,14 @@
 #include "largenum.h"
 
 int main() {
-	FILE *f = fopen("0013.txt", "r");
 	largenum sum, temp;
 	char s[LARGENUM_MAX_DIGITS];
 
-	if (f == NULL)
+	FILE *f = fopen("../_txt/0013.txt", "r");
+	if (f == NULL) {
+		perror("_txt/0013.txt");
 		exit(EXIT_FAILURE);
+	}
 
 	sum = load("0");
 	while (fscanf(f, "%s", s) == 1) {

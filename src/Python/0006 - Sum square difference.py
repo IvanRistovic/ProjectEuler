@@ -18,3 +18,6 @@ print sum * sum - sumsq
 
 # Solution:
 # 25164150
+# real	0m0.018s
+# user	0m0.012s
+# sys	0m0.004s

@@ -3,10 +3,10 @@
 # 50-digit numbers (see 0013.txt)
 
 try:
-	with open("0013.txt", "r") as f:
+	with open("../_txt/0013.txt", "r") as f:
 		lines = f.readlines();
 except IOError:
-	exit("error: fopen error")
+	exit("missing file: _txt/0013.txt")
 
 sum = 0
 for line in lines:
@@ -16,3 +16,6 @@ print sum
 
 # Solution:
 # 5537376230390876637302048746832985971773659831892672
+# real	0m0.018s
+# user	0m0.012s
+# sys	0m0.004s

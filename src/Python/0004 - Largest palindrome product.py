@@ -28,3 +28,6 @@ print max_palindrome
 
 # Solution:
 # 906609
+# real	0m0.188s
+# user	0m0.172s
+# sys	0m0.004s

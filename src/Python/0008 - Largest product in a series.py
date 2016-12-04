@@ -7,10 +7,10 @@
 # greatest product. What is the value of this product?
 
 try:
-	with open("0008.txt", "r") as f:
+	with open("../_txt/0008.txt", "r") as f:
 		content = f.readline()
 except IOError:
-	exit("error: fopen error")
+	exit("missing file: _txt/0008.txt")
 
 max_pr = 1
 for i in range(0, 987):
@@ -28,3 +28,6 @@ print max_pr
 
 # Solution:
 # 23514624000
+# real	0m0.027s
+# user	0m0.016s
+# sys	0m0.008s

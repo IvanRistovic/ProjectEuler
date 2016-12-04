@@ -19,3 +19,6 @@ print sum
 
 # Solution:
 # 4613732
+# real	0m0.020s
+# user	0m0.012s
+# sys	0m0.008s

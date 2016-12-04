@@ -7,10 +7,10 @@
 # (up, down, left, right, or diagonally) in the 20x20 grid?
 
 try:
-	with open("0011.txt", "r") as f:
+	with open("../_txt/0011.txt", "r") as f:
 		lines = f.readlines()
 except IOError:
-	exit("error: fopen error")
+	exit("missing file: _txt/0011.txt")
 
 # forming matrix
 matrix = []
@@ -50,3 +50,6 @@ print maxpr
 
 # Solution:
 # 70600674
+# real	0m0.028s
+# user	0m0.020s
+# sys	0m0.004s

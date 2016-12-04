@@ -35,10 +35,15 @@
 #define MAX 26
 
 int main(){
-	FILE *f = fopen("0011.txt", "r");
 	int m[MAX][MAX];
 	int i = 0, j = 0;
 	int pr = 1, maxpr = 0;
+
+	FILE *f = fopen("../_txt/0011.txt", "r");
+	if (f == NULL) {
+		perror("_txt/0011.txt");
+		exit(EXIT_FAILURE);
+	}
 
 	/* idea is to make a 3 layer wrap of 1s around matrix, like:
 			1 1 1 1 1

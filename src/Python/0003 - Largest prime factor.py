@@ -20,3 +20,6 @@ print largest_pf
 
 # Solution:
 # 6857
+# real	0m0.023s
+# user	0m0.020s
+# sys	0m0.004s

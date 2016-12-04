@@ -6,14 +6,17 @@
 
 i = 0
 try:
-	with open("prime_list.txt", "r") as f:
+	with open("../_txt/prime_list.txt", "r") as f:
 		while i < 10001:
 			line = f.readline();
 			i += 1
 except IOError:
-	exit("error: fopen error")
+	exit("missing file: _txt/prime_list.txt")
 
 print line,
 
 # Solution:
 # 104743
+# real	0m0.024s
+# user	0m0.016s
+# sys	0m0.004s

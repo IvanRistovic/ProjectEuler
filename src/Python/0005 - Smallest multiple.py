@@ -25,3 +25,6 @@ print number
 
 # Solution:
 # 232792560
+# real	0m0.018s
+# user	0m0.008s
+# sys	0m0.004s
