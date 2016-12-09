@@ -17,6 +17,6 @@ print s
 
 # Solution:
 # 648
-# real 0m0.019s
-# user 0m0.008s
-# sys  0m0.008s
+# real	0m0.019s
+# user	0m0.008s
+# sys	0m0.008s

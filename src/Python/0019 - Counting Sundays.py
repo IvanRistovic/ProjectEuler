@@ -64,6 +64,6 @@ print count
 
 # Solution:
 # 171
-# real 0m0.068s
-# user 0m0.056s
-# sys  0m0.008s
+# real	0m0.068s
+# user	0m0.056s
+# sys	0m0.008s

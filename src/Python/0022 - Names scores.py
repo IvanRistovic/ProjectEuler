@@ -44,6 +44,6 @@ print score_sum
 
 # Solution:
 # 871198282
-# real 0m0.054s
-# user 0m0.032s
-# sys  0m0.012s
+# real	0m0.054s
+# user	0m0.032s
+# sys	0m0.012s
