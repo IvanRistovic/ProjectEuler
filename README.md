@@ -3,21 +3,16 @@
 ## Description
 My solutions for problems for [Project Euler](https://projecteuler.net/archives).
 
+**CURRENTLY MIGRATING TO C++**
+
 ## Usage
-- For Python script, no additional procedures needed. Just run it.
-- For C code, compile the code as following:
+
+Navigate to problem folder and simply run **make**:
 ```
-gcc {problem}.c [-o {desired output name}] {LIBS}
+$ make
 ```
 
-  Where:
-  - {problem} is the name of the source (ex. 0007\ -\ 10001st\ prime). Space has to be escaped.
-  - [-o {desired output name}] is optional
-  - {LIBS} are the libraries needed by the source.
-
-  Please check source for detailed information on what libraries to use.
-
-  Example:
-  ```
-  gcc 0007\ -\ 10001st\ prime.c -o prb0007 primes.c -lm
-  ```
+This will create an executable with a problem number as it's name, hence you can run it as (for example, if you compiled problem 0001):
+```
+$ ./0001.out
+```
