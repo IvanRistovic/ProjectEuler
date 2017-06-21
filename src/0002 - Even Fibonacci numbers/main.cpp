@@ -13,8 +13,6 @@
 #include <iostream>
 #include "../timer.h"
 
-#define LIMIT 4000000
-
 int main()
 {
 	ProgramTimer timer;
@@ -22,7 +20,7 @@ int main()
 	int f1 = 1, f2 = 2, f3 = 3;
 	int sum = 2;
 
-	while (f3 < LIMIT) {
+	while (f3 < 4000000) {
 		f1 = f2;
 		f2 = f3;
 		f3 = f1 + f2;
