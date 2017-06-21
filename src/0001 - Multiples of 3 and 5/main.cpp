@@ -27,5 +27,5 @@ int main()
 
 /*
 	Solution:	233168
-	Avg time:	5.6291e-05s
+	Avg time:	3.6291e-05s
 */
