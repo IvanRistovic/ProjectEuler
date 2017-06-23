@@ -28,8 +28,8 @@ public:
 
 	void generate_with_limit(unsigned element_limit);
 	void generate_for_exactly(unsigned prime_count);
-
 	const std::vector<bool>& sieve() const;
+	unsigned get_prime_with_index(unsigned index) const;
 
 	template <typename T>
 	bool is_prime(T number) {
@@ -43,6 +43,7 @@ public:
 	bool is_prime_odd(T number) {
 		return m_sieve[number / 2];
 	}
+
 
 private:
 	std::vector<bool> m_sieve;
