@@ -29,7 +29,6 @@ const std::vector<bool>& SieveOfErathostenes::sieve() const
 	return m_sieve;
 }
 
-#include <iostream>
 unsigned SieveOfErathostenes::get_prime_with_index(unsigned index) const
 {
 	if (index < 2)

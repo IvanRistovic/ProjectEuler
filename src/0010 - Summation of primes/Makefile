@@ -1,9 +1,10 @@
 CC  	= g++
 CCFLAGS	= -Wall -Wextra -O3
-PROGRAM	= 0008.out
+PROGRAM	= 0010.out
 OBJ 	= 		 	\
 	main.o   	 	\
-	../timer.o
+	../timer.o		\
+	../primes.o
 
 
 %.o: %.c

@@ -28,11 +28,13 @@ public:
 
 	void generate_with_limit(unsigned element_limit);
 	void generate_for_exactly(unsigned prime_count);
+
 	const std::vector<bool>& sieve() const;
 	unsigned get_prime_with_index(unsigned index) const;
 
 	template <typename T>
-	bool is_prime(T number) {
+	bool is_prime(T number) const
+	{
 		if ((number % 2 == 0 && number != 2) || number < 2)
 			return false;
 		else
@@ -40,10 +42,20 @@ public:
 	}
 
 	template <typename T>
-	bool is_prime_odd(T number) {
+	bool is_prime_odd(T number) const
+	{
 		return m_sieve[number / 2];
 	}
 
+	template <typename T>
+	T accumulate() const
+	{
+		T sum = 2;
+		for (unsigned i = 1; i < m_sieve.size(); i++)
+			if (m_sieve[i])
+				sum += (T)(2*i + 1);
+		return sum;
+	}
 
 private:
 	std::vector<bool> m_sieve;
