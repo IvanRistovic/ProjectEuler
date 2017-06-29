@@ -1,6 +1,7 @@
 #include "primes.h"
 
 SieveOfErathostenes::SieveOfErathostenes()
+	: m_pos(0)
 {
 
 }
@@ -42,4 +43,9 @@ unsigned SieveOfErathostenes::get_prime_with_index(unsigned index) const
 	}
 
 	return 2*(i-1) + 1;
+}
+
+void SieveOfErathostenes::rewind()
+{
+	m_pos = 0;
 }
