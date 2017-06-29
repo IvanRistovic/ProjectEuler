@@ -30,7 +30,6 @@ public:
 	void generate_for_exactly(unsigned prime_count);
 
 	const std::vector<bool>& sieve() const;
-	unsigned get_prime_with_index(unsigned index) const;
 
 	template <typename T>
 	bool is_prime(T number) const;
@@ -45,6 +44,8 @@ public:
 	T next_prime();
 
 	void rewind();
+
+	unsigned operator[](unsigned index) const;
 
 private:
 	std::vector<bool> m_sieve;

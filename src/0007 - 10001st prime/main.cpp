@@ -18,7 +18,7 @@ int main()
 	SieveOfErathostenes e;
 	e.generate_with_limit(110000);
 
-	std::cout << e.get_prime_with_index(10001) << '\n';
+	std::cout << e[10001] << '\n';
 
 	timer.print_time();
 	return 0;

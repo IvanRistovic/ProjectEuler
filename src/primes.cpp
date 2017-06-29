@@ -30,7 +30,7 @@ const std::vector<bool>& SieveOfErathostenes::sieve() const
 	return m_sieve;
 }
 
-unsigned SieveOfErathostenes::get_prime_with_index(unsigned index) const
+unsigned SieveOfErathostenes::operator[](unsigned index) const
 {
 	if (index < 2)
 		return 2;
