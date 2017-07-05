@@ -42,10 +42,6 @@ int main()
 }
 
 /*
- Solution:
- 76576500
-
- real 0m0.224s
- user 0m0.216s
- sys  0m0.004s
+	Solution:	76576500
+	Avg time:	0.197161s
 */
