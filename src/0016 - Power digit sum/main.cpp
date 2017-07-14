@@ -30,10 +30,6 @@ int main()
 }
 
 /*
- Solution:
- 1366
-
- real 0m0.003s
- user 0m0.000s
- sys  0m0.000s
+	Solution:	1366
+	Avg time:	0.000232407s
 */
