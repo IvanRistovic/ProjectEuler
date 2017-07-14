@@ -6,50 +6,17 @@
 */
 
 #include <iostream>
+#include "../combinatorics.h"
 #include "../timer.h"
-
-unsigned long latticecomb(void);
-unsigned long lattice(void);
-
 
 int main()
 {
 	ProgramTimer timer;
 
-	// std::cout << lattice() << '\n';
-	std::cout << latticecomb() << '\n';
+	std::cout << choose<unsigned long>(40, 20) << '\n';
 
 	timer.print_time();
 	return 0;
-}
-
-
-unsigned long latticecomb(void)
-{
-	unsigned long k = 1;
-
-	for (unsigned long i = 0; i < 20; i++) {
-		k = k * ((2 * 20) - i);
-		k = k / (i + 1);
-	}
-
-	return k;
-}
-
-unsigned long lattice(void)
-{
-	unsigned long int matrix[20+1][20+1];
-
-	for (unsigned long i = 0; i <= 20; i++) {
-		matrix[20][i] = 1;
-		matrix[i][20] = 1;
-	}
-
-	for (unsigned long i = 19; i >= 0; i--)
-		for (unsigned long j = 19; j >= 0; j--)
-			matrix[i][j] = matrix[i+1][j] + matrix[i][j+1];
-
-	return matrix[0][0];
 }
 
 /*
