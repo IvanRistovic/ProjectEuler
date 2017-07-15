@@ -5,7 +5,7 @@
 	numbers (see the 0013.txt).
 */
 
-#include <stdio.h>
+#include <iostream>
 #include <fstream>
 #include <gmpxx.h>
 #include "../timer.h"
