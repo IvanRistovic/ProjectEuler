@@ -67,7 +67,8 @@ int main()
 	return 0;
 }
 
-int maxpath(int m[][TRIANGLE_SIZE], int n) {
+int maxpath(int m[][TRIANGLE_SIZE], int n)
+{
 	for (int i = n-1; i >= 0; i--)
 		for (int j = 0; j <= i; j++)
 			m[i][j] += std::max(m[i+1][j], m[i+1][j+1]);
