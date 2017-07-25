@@ -3,8 +3,6 @@
 ## Description
 My solutions for problems for [Project Euler](https://projecteuler.net/archives).
 
-**CURRENTLY MIGRATING TO C++**
-
 ## Usage
 
 Navigate to problem folder and simply run **make**:
