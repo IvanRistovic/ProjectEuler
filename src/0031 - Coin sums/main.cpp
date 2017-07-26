@@ -35,6 +35,6 @@ int main()
 }
 
 /*
-	Solution:	76382
+	Solution:	73682
 	Avg time:	0.000890146s
 */

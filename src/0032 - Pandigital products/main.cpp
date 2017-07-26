@@ -79,6 +79,6 @@ bool is_pandigital(unsigned multiplier, unsigned multiplicand, unsigned product)
 }
 
 /*
-	Solution:	76382
+	Solution:	45228
 	Avg time:	0.000890146s
 */
