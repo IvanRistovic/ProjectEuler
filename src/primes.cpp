@@ -49,3 +49,9 @@ void SieveOfErathostenes::rewind()
 {
 	m_pos = 0;
 }
+
+void SieveOfErathostenes::setpos(unsigned pos)
+{
+	while (pos--)
+		next_prime<int>();
+}

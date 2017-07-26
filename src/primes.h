@@ -48,6 +48,7 @@ public:
 	T next_prime();
 
 	void rewind();
+	void setpos(unsigned pos);
 
 	unsigned operator[](unsigned index) const;
 

@@ -1,17 +1,12 @@
 /*
-	Problem 33
+	Problem 34
 
-	The fraction 49/98 is a curious fraction, as an inexperienced mathematician
-	in attempting to simplify it may incorrectly believe that 49/98 = 4/8, which
-	is correct, is obtained by cancelling the 9s.
+	145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
 
-	We shall consider fractions like, 30/50 = 3/5, to be trivial examples.
+	Find the sum of all numbers which are equal to the sum of the factorial of
+	their digits.
 
-	There are exactly four non-trivial examples of this type of fraction, less
-	than one in value, and containing two digits in the numerator and denominator.
-
-	If the product of these four fractions is given in its lowest common terms,
-	find the value of the denominator.
+	Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 */
 
 #include <iostream>
