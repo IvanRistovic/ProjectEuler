@@ -14,8 +14,8 @@
 */
 
 #include <iostream>
-#include "../timer.h"
 #include "../divisors.h"
+#include "../timer.h"
 
 int main()
 {
@@ -23,8 +23,8 @@ int main()
 
 	unsigned sum = 0;
 	for (unsigned i = 1; i < 10000; i++) {
-		unsigned tmp = div_sum(i);
-		if (tmp > i && div_sum(tmp) == i)
+		unsigned tmp = pe_div::div_sum(i);
+		if (tmp > i && pe_div::div_sum(tmp) == i)
 			sum += i + tmp;
 	}
 

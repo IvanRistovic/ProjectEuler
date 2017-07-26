@@ -49,6 +49,6 @@ namespace pe_div {
 		return sum;
 	}
 
-}	// namespace divisors
+}	// namespace pe_div
 
 #endif

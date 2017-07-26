@@ -22,8 +22,8 @@
 
 #include <iostream>
 #include <vector>
-#include "../timer.h"
 #include "../divisors.h"
+#include "../timer.h"
 
 #define START 12
 #define LIMIT 28123
@@ -39,7 +39,7 @@ int main()
 	std::vector<bool> sums(LIMIT + 1, false);
 
 	for (unsigned i = START; i < LIMIT; i++)
-		if (div_sum(i) > i)
+		if (pe_div::div_sum(i) > i)
 			abundant_numbers.push_back(i);
 
 	create_sums(abundant_numbers, sums);

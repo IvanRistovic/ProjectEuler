@@ -14,7 +14,7 @@ int main()
 {
 	ProgramTimer timer;
 
-	std::cout << choose<unsigned long>(40, 20) << '\n';
+	std::cout << pe_comb::choose<unsigned long>(40, 20) << '\n';
 
 	timer.print_time();
 	return 0;
