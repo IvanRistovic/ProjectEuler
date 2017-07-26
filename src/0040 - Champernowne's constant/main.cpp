@@ -40,5 +40,5 @@ int main()
 
 /*
 	Solution:	840
-	Avg time:	0.403111s
+	Avg time:	0.0748293s
 */
