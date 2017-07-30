@@ -14,21 +14,21 @@
 #include <iostream>
 #include "../timer.h"
 
+#define SUM (200)
+
 int main()
 {
 	ProgramTimer timer;
 
-	unsigned ways = 0;
-	for (int p200 = 200; p200 >= 0; p200 -= 200)
-		for (int p100 = p200; p100 >= 0; p100 -= 100)
-			for (int p50 = p100; p50 >= 0; p50 -= 50)
-				for (int p20 = p50; p20 >= 0; p20 -= 20)
-					for (int p10 = p20; p10 >= 0; p10 -= 10)
-						for (int p5 = p10; p5 >= 0; p5 -= 5)
-							for (int p2 = p5; p2 >= 0; p2 -= 2)
-								ways++;
+	unsigned coins[] = { 1, 2 , 5 , 10 , 20 , 50 , 100 , 200 };
+	unsigned ways[SUM + 1] = { 0 };
+	ways[0] = 1;
+	
+	for (unsigned i = 0; i < 8; i++)
+		for (unsigned j = coins[i]; j <= SUM; j++)
+			ways[j] += ways[j - coins[i]];
 
-	std::cout << ways << '\n';
+	std::cout << ways[SUM] << '\n';
 
 	timer.print_time();
 	return 0;
@@ -36,5 +36,5 @@ int main()
 
 /*
 	Solution:	73682
-	Avg time:	0.000890146s
+	Avg time:	0.000114286s
 */
