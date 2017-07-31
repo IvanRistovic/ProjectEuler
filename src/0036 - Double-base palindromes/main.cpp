@@ -38,6 +38,7 @@ bool is_palindrome2(unsigned n)
 	unsigned mask_left = 1 << (8 * sizeof(unsigned) - 1);
 	unsigned mask_right = 1;
 
+	// Skip leading zeros
 	while ((unsigned)(n & mask_left) == 0)
 		mask_left >>= 1;
 

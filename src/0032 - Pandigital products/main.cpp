@@ -47,7 +47,7 @@ int main()
 
 bool is_pandigital(unsigned multiplier, unsigned multiplicand, unsigned product)
 {
-	bool digits[] = { false, false, false, false, false, false, false, false, false };
+	bool digits[9] = { false  };
 
 	for (; multiplier != 0; multiplier /= 10) {
 		int digit = multiplier % 10 - 1;
@@ -80,5 +80,5 @@ bool is_pandigital(unsigned multiplier, unsigned multiplicand, unsigned product)
 
 /*
 	Solution:	45228
-	Avg time:	0.000890146s
+	Avg time:	0.00544598s
 */
