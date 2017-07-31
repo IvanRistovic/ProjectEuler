@@ -19,19 +19,15 @@ int main()
 {
 	ProgramTimer timer;
 
-	SieveOfErathostenes sieve;
-	sieve.generate_with_limit(8000000);
-
 	/*
-		We know that the number must have 7 digits, since the sum of
-		8 and 9 digit pandigital numbers is divisible by 3, so every
-		possible pandigital number with 8 or 9 digits is also divisible
-		by 3 (hence isn't prime)
+		We know that the number must have 7 or 4 digits, since the sum of
+		other digit pandigital numbers is divisible by 3 which means that the
+		whole number is divisible by 3 and hence isn't prime
 	*/
 	std::string num = "7654321";
 	do {
 		unsigned n = std::stoi(num);
-		if (sieve.is_prime(n))
+		if (pe_primes::is_prime(n))
 			break;
 	} while (std::prev_permutation(num.begin(), num.end()));
 
@@ -42,20 +38,7 @@ int main()
 }
 
 
-bool is_circular_prime(unsigned n, const SieveOfErathostenes &sieve)
-{
-	for (unsigned num = n; num != 0; num /= 10)
-		if (sieve.is_prime(num) == false)
-			return false;
-
-	for (unsigned prod = 10; n % prod != n; prod *= 10)
-		if (sieve.is_prime(n % prod) == false)
-			return false;
-
-	return true;
-}
-
 /*
 	Solution:	7652413
-	Avg time:	0.664959s
+	Avg time:	0.000184526s
 */
