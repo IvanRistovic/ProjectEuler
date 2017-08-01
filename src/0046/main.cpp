@@ -1,12 +1,20 @@
 /*
-	Problem 41
+	Problem 46
 
-	We shall say that an n-digit number is pandigital if it makes use of all the
-	digits 1 to n exactly once.
+	It was proposed by Christian Goldbach that every odd composite number can
+	be written as the sum of a prime and twice a square.
 
-	For example, 2143 is a 4-digit pandigital and is also prime.
+	9 = 7 + 2×1^2
+	15 = 7 + 2×2^2
+	21 = 3 + 2×3^2
+	25 = 7 + 2×3^2
+	27 = 19 + 2×2^2
+	33 = 31 + 2×1^2
 
-	What is the largest n-digit pandigital prime that exists?
+	It turns out that the conjecture was false.
+
+	What is the smallest odd composite that cannot be written as the sum of a
+	prime and twice a square?
 */
 
 #include <iostream>
