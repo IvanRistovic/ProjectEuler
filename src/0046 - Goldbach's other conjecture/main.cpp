@@ -39,6 +39,7 @@ int main()
 			break;
 
 	std::cout << i << '\n';
+	
 	timer.print_time();
 	return 0;
 }
