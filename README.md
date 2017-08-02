@@ -1,5 +1,7 @@
 # ProjectEuler
 
+![](https://projecteuler.net/profile/xris47.png)
+
 ## Description
 My solutions for problems for [Project Euler](https://projecteuler.net/archives).
 

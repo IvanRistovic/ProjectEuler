@@ -36,7 +36,7 @@ int main()
 	// Search 4 consecutive
 	unsigned i = 2*3*5*7;
 	while (i < SIEVE_SIZE)
-		if (sieve[i++] == 4 && sieve[i++] == 4 &&sieve[i++] == 4 && sieve[i++] == 4)
+		if (sieve[i++] == 4 && sieve[i++] == 4 && sieve[i++] == 4 && sieve[i++] == 4)
 			break;
 
 	std::cout << i - 4 << '\n';
