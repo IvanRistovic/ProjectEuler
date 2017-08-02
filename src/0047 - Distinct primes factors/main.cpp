@@ -17,47 +17,35 @@
 #include <iostream>
 #include "../timer.h"
 
-int prime_factor_num(unsigned n);
-
+#define SIEVE_SIZE (500000)
 
 int main()
 {
 	ProgramTimer timer;
 
-	unsigned i = 2*3*5*7, streak = 0;
-	while (streak < 4) {
-		if (prime_factor_num(i) == 4)
-			streak++;
-		else
-			streak = 0;
-		i++;
+	unsigned sieve[SIEVE_SIZE] = { 0 };
+
+	// Generate sieve with number of factors
+	for (unsigned i = 2; i < SIEVE_SIZE; i++) {
+		if (sieve[i] > 0)
+			continue;
+		for (unsigned j = i; j < SIEVE_SIZE; j += i)
+			sieve[j]++;
 	}
 
-	std::cout << i - streak << '\n';
+	// Search 4 consecutive
+	unsigned i = 2*3*5*7;
+	while (i < SIEVE_SIZE)
+		if (sieve[i++] == 4 && sieve[i++] == 4 &&sieve[i++] == 4 && sieve[i++] == 4)
+			break;
+
+	std::cout << i - 4 << '\n';
 
 	timer.print_time();
 	return 0;
 }
 
-
-int prime_factor_num(unsigned n)
-{
-	int count = 0;
-
-	for (unsigned i = 2; i <= n; i++) {
-		unsigned old_n = n;
-
-		while (n % i == 0)
-			n /= i;
-
-		if (n < old_n)
-			count++;
-	}
-
-	return count;
-}
-
 /*
-	Solution:	5777
-	Avg time:	0.0217117s
+	Solution:	134043
+	Avg time:	0.0386374s
 */
