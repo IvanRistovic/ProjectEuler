@@ -23,6 +23,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 #include "../timer.h"
 
 #define TRIANGLE_SIZE 100
