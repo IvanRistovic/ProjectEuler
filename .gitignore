@@ -37,3 +37,4 @@ src/test.cpp
 # Debug files
 *.dSYM/
 *.su
+.vs

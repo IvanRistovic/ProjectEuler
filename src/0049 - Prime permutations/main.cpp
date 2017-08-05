@@ -14,8 +14,6 @@
 
 #include <iostream>
 #include <vector>
-#include <string>
-#include <algorithm>
 #include "../primes.h"
 #include "../timer.h"
 
