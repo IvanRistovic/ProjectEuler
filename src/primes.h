@@ -47,6 +47,9 @@ public:
 	template <typename T>
 	T next_prime();
 
+	template <typename T>
+	void create_prime_vector(std::vector<T> &v);
+
 	void rewind();
 	void setpos(unsigned pos);
 
@@ -83,12 +86,23 @@ T SieveOfErathostenes::accumulate() const
 }
 
 template <typename T>
-T SieveOfErathostenes::next_prime() {
+T SieveOfErathostenes::next_prime()
+{
 	do {
 		m_pos++;
 	} while (m_pos < m_sieve.size() && m_sieve[m_pos] == false);
 
 	return (T)(2 * m_pos + 1);
+}
+
+template <typename T>
+void SieveOfErathostenes::create_prime_vector(std::vector<T> &v)
+{
+	v.clear();
+	v.push_back(2);
+	for (unsigned i = 1; i < m_sieve.size(); i++)
+		if (m_sieve[i])
+			v.push_back((T)(2*i + 1));
 }
 
 #endif
