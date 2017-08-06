@@ -15,10 +15,8 @@
 #include <iostream>
 #include <vector>
 #include "../primes.h"
+#include "../combinatorics.h"
 #include "../timer.h"
-
-bool is_perm(unsigned m, unsigned n);
-
 
 int main()
 {
@@ -41,7 +39,9 @@ int main()
 		for (unsigned j = i + 1; j < primes.size(); j++) {
 			unsigned t = primes[j] + (primes[j] - primes[i]);
 			if (t < 10000 && pe_primes::is_prime(t))
-				if (is_perm(primes[i], primes[j]) && is_perm(primes[i], t)) {
+				if (
+					pe_comb::is_perm(primes[i], primes[j]) &&
+					pe_comb::is_perm(primes[i], t)) {
 					std::cout << primes[i] << primes[j] << t << '\n';
 					timer.print_time();
 					return 0;
@@ -50,30 +50,6 @@ int main()
 	}
 
 	return 0;
-}
-
-
-bool is_perm(unsigned m, unsigned n)
-{
-	unsigned arr[10] = { 0 };
-
-	unsigned temp = n;
-	while (temp > 0) {
-		arr[temp % 10]++;
-		temp /= 10;
-	}
-
-	temp = m;
-	while (temp > 0) {
-		arr[temp % 10]--;
-		temp /= 10;
-	}
-
-	for (unsigned i = 0; i< 10; i++)
-		if (arr[i] != 0)
-			return false;
-
-	return true;
 }
 
 /*

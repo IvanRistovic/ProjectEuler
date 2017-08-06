@@ -16,6 +16,30 @@ namespace pe_comb {
 		return result;
 	}
 
+	template <typename T>
+	bool is_perm(T m, T n)
+	{
+		T arr[10] = { 0 };
+
+		T temp = n;
+		while (temp > 0) {
+			arr[temp % 10]++;
+			temp /= 10;
+		}
+
+		temp = m;
+		while (temp > 0) {
+			arr[temp % 10]--;
+			temp /= 10;
+		}
+
+		for (unsigned i = 0; i < 10; i++)
+			if (arr[i] != 0)
+				return false;
+
+		return true;
+	}
+
 }	// namespace pe_comb
 
 #endif
