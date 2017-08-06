@@ -16,8 +16,6 @@
 */
 
 #include <iostream>
-#include <gmpxx.h>
-#include "../combinatorics.h"
 #include "../timer.h"
 
 #define SIZE (100)
@@ -26,16 +24,21 @@ int main()
 {
 	ProgramTimer timer;
 
-	mpz_class pascal[SIZE+1][SIZE+1];
+	unsigned pascal[SIZE+1][SIZE/2+1];
 	unsigned count = 0;
 	for (unsigned n = 0; n <= SIZE; n++)
 		pascal[n][0] = 1;
 
 	for (unsigned n = 1; n <= SIZE; n++) {
-		for (unsigned k = 1; k <= n; k++) {
+		for (unsigned k = 1; k <= n/2; k++) {
 			pascal[n][k] = pascal[n-1][k-1] + pascal[n-1][k];
-			if (pascal[n][k] > 1000000)
-				count++;
+			if (k == n / 2 && n % 2 == 0)
+				pascal[n][k] += pascal[n-1][k-1];
+			if (pascal[n][k] > 1000000) {
+				pascal[n][k] = 1000000;
+				count += n - 2*k + 1;
+				break;
+			}
 		}
 	}
 
@@ -47,5 +50,5 @@ int main()
 
 /*
 	Solution:	4075
-	Avg time:	0.00306248s
+	Avg time:	0.000172503s
 */

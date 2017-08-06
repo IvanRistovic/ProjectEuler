@@ -1,5 +1,5 @@
 CC  	= g++
-CCFLAGS	= -Wall -Wextra -O3 -lgmp -lgmpxx
+CCFLAGS	= -Wall -Wextra -O3
 PROGRAM	= 0053.out
 OBJ 	= 		 	\
 	main.o   	 	\
