@@ -1,7 +1,7 @@
 #ifndef _H_UTILITY_H_
 #define _H_UTILITY_H_
 
-#define pe_util::is_palindrome(x) pe_util::is_palindrome10(x)
+#define is_palindrome(x) is_palindrome10(x)
 
 namespace pe_util {
 
@@ -27,16 +27,20 @@ namespace pe_util {
 	}
 
 	template <typename T>
+	T reverse(T n)
+	{
+		T reversed = 0;
+		while (n) {
+			reversed = reversed * 10 + n % 10;
+			n /= 10;
+		}
+		return reversed;
+	}
+
+	template <typename T>
 	bool is_palindrome10(T n)
 	{
-		T reversed = 0, num = n;
-
-		while (num) {
-			reversed = reversed * 10 + num % 10;
-			num /= 10;
-		}
-
-		if (reversed == n)
+		if (reverse(n) == n)
 			return true;
 		else
 			return false;
