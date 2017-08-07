@@ -46,6 +46,15 @@ namespace pe_util {
 			return false;
 	}
 
+	template <typename T>
+	T num_of_digits(T n)
+	{
+		T count = 0;
+		for (; n != 0; n /= 10)
+			count++;
+		return count;
+	}
+
 }	// pe_util
 
 #endif

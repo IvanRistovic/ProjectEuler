@@ -1,6 +1,6 @@
 CC  	= g++
 CCFLAGS	= -Wall -Wextra -O3 -lgmp -lgmpxx
-PROGRAM	= 0056.out
+PROGRAM	= 0057.out
 OBJ 	= 		 	\
 	main.o   	 	\
 	../timer.o
