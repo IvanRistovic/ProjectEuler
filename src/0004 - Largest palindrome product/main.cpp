@@ -8,10 +8,8 @@
 */
 
 #include <iostream>
+#include "../utility.h"
 #include "../timer.h"
-
-bool is_palindrome(int num);
-
 
 int main()
 {
@@ -21,7 +19,7 @@ int main()
 	for (int i = 999; i >= 100; i--) {
 		for (int j = i; j >= 100; j--) {
 			int product = i * j;
-			if (product > max_product && is_palindrome(product))
+			if (product > max_product && pe_util::is_palindrome(product))
 				max_product = product;
 		}
 	}
@@ -30,22 +28,6 @@ int main()
 
 	timer.print_time();
 	return 0;
-}
-
-
-bool is_palindrome(int number)
-{
-	int reversed = 0, num = number;
-
-	while (num) {
-		reversed = reversed * 10 + num % 10;
-		num /= 10;
-	}
-
-	if (reversed == number)
-		return true;
-	else
-		return false;
 }
 
 /*
