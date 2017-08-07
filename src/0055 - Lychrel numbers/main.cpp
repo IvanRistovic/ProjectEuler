@@ -32,7 +32,6 @@
 
 #include <iostream>
 #include <gmpxx.h>
-#include "../utility.h"
 #include "../timer.h"
 
 bool is_lychrel(int x);
@@ -57,9 +56,14 @@ int main()
 bool is_lychrel(int x)
 {
 	mpz_class sum(x);
-	for (int i = 0; i < 50; i++) {
-		sum += pe_util::reverse(sum);
-		if (pe_util::is_palindrome(sum))
+	std::string sum_str = sum.get_str();
+	std::string reverse_sum_str = std::string(sum_str.crbegin(), sum_str.crend());
+	for (int i = 1; i < 50; i++) {
+		mpz_class reversed(reverse_sum_str, 10);
+		sum += reversed;
+		sum_str = sum.get_str();
+		reverse_sum_str = std::string(sum_str.crbegin(), sum_str.crend());
+		if (sum_str == reverse_sum_str)
 			return false;
 	}
 	return true;
@@ -67,5 +71,5 @@ bool is_lychrel(int x)
 
 /*
 	Solution:	249
-	Avg time:	0.277498s
+	Avg time:	0.0886722s
 */
