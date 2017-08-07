@@ -35,7 +35,7 @@
 #include "../utility.h"
 #include "../timer.h"
 
-bool is_lychrel(const mpz_class &x);
+bool is_lychrel(int x);
 
 
 int main()
@@ -43,7 +43,7 @@ int main()
 	ProgramTimer timer;
 
 	unsigned count = 0;
-	for (mpz_class i(1); i < 10000; i++)
+	for (int i = 1; i < 10000; i++)
 		if (is_lychrel(i))
 			count++;
 
@@ -54,9 +54,9 @@ int main()
 }
 
 
-bool is_lychrel(const mpz_class &x)
+bool is_lychrel(int x)
 {
-	mpz_class sum = x;
+	mpz_class sum(x);
 	for (int i = 0; i < 50; i++) {
 		sum += pe_util::reverse(sum);
 		if (pe_util::is_palindrome(sum))
