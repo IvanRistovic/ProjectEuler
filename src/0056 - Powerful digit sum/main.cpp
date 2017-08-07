@@ -10,10 +10,11 @@
 */
 
 #include <iostream>
-#include <gmp.h>
+#include <string>
+#include <gmpxx.h>
 #include "../timer.h"
 
-unsigned digit_sum(mpz_t n);
+unsigned digit_sum(const mpz_class &n);
 
 
 int main()
@@ -22,10 +23,9 @@ int main()
 
 	unsigned max = 0;
 	for (unsigned a = 2; a < 100; a++) {
+		mpz_class n(a);
 		for (unsigned b = 2; b < 100; b++) {
-			mpz_t n;
-			mpz_init(n);
-			mpz_ui_pow_ui(n, a, b);
+			n *= a;
 			unsigned digsum = digit_sum(n);
 			if (digsum > max)
 				max = digsum;
@@ -38,14 +38,13 @@ int main()
 	return 0;
 }
 
-unsigned digit_sum(mpz_t n)
+unsigned digit_sum(const mpz_class &n)
 {
 	unsigned sum = 0;
 
-	char buf[256];
-	gmp_sprintf(buf, "%Zd", n);
-	for (unsigned i = 0; buf[i]; i++)
-		sum += buf[i] - '0';
+	std::string buf = n.get_str();
+	for (char c : buf)
+		sum += c - '0';
 
 	return sum;
 }
@@ -53,5 +52,5 @@ unsigned digit_sum(mpz_t n)
 
 /*
 	Solution:	972
-	Avg time:	0.0313342s
+	Avg time:	0.0403342s
 */
