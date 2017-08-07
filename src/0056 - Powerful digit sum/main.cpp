@@ -41,15 +41,17 @@ int main()
 unsigned digit_sum(mpz_t n)
 {
 	unsigned sum = 0;
-	while (mpz_sgn(n) != 0) {
-		sum += mpz_fdiv_ui(n, 10);
-		mpz_tdiv_q_ui(n, n, 10);
-	}
+
+	char buf[256];
+	gmp_sprintf(buf, "%Zd", n);
+	for (unsigned i = 0; buf[i]; i++)
+		sum += buf[i] - '0';
+
 	return sum;
 }
 
 
 /*
 	Solution:	972
-	Avg time:	0.0968466s
+	Avg time:	0.0313342s
 */
