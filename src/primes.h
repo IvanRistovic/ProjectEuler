@@ -105,4 +105,66 @@ void SieveOfErathostenes::create_prime_vector(std::vector<T> &v)
 			v.push_back((T)(2*i + 1));
 }
 
+
+class MillerRabinPrimeTest {
+public:
+	MillerRabinPrimeTest() = delete;
+
+	template <typename T>
+	static bool test(T n)
+	{
+		if (n < 100)
+			return pe_primes::is_prime(n);
+
+		int r, d;
+		factor((int)n - 1, &r, &d);
+		long long lln = (long long)n;
+
+		int witnesses[] = { 2, 7, 61 };
+		for (int i = 0; i < 3; i++) {
+			long long prev = (long long)pow_mod_n(witnesses[i], d, (int)n);
+			long long curr;
+			for (int k = 1; k <= r; k++) {
+				curr = (prev * prev) % lln;
+				if ((curr == 1ll) && (prev != 1ll) && (prev != lln - 1ll))
+					return false;
+				prev = curr;
+			}
+			if (curr != 1)
+				return false;
+		}
+		return true;
+	}
+
+private:
+	template <typename T>
+	static int pow_mod_n(T base, T e, T n)
+	{
+		long long power = base;
+		long long result = 1;
+		long long lln = (long long)n;
+
+		while (e) {
+			if (e % 2)
+				result = (result * power) % lln;
+			power = (power * power) % lln;
+			e /= 2;
+		}
+
+		return (int)result;
+	}
+
+	template <typename T>
+	static void factor(T n, T *r, T *d)
+	{
+		(*r) = 0;
+		(*d) = 1;
+		while (n % 2 == 0) {
+			n /= 2;
+			(*r)++;
+		}
+		*d = n;
+	}
+};
+
 #endif
