@@ -111,7 +111,7 @@ public:
 	MillerRabinPrimeTest() = delete;
 
 	template <typename T>
-	static bool test(T n)
+	static bool is_prime(T n)
 	{
 		if (n < 100)
 			return pe_primes::is_prime(n);

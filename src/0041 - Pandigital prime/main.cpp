@@ -27,7 +27,7 @@ int main()
 	std::string num = "7654321";
 	do {
 		unsigned n = std::stoi(num);
-		if (pe_primes::is_prime(n))
+		if (MillerRabinPrimeTest::is_prime(n))
 			break;
 	} while (std::prev_permutation(num.begin(), num.end()));
 
@@ -40,5 +40,5 @@ int main()
 
 /*
 	Solution:	7652413
-	Avg time:	0.000184526s
+	Avg time:	0.000154526s
 */

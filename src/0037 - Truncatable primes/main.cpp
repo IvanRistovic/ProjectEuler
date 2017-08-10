@@ -16,7 +16,7 @@
 #include "../primes.h"
 #include "../timer.h"
 
-bool is_circular_prime(unsigned n, const SieveOfErathostenes &sieve);
+bool is_truncatable_prime(unsigned n, const SieveOfErathostenes &sieve);
 
 
 int main()
@@ -30,7 +30,7 @@ int main()
 	unsigned count = 0, sum = 0;
 	while (count < 11) {
 		unsigned i = sieve.next_prime<unsigned>();
-		if (is_circular_prime(i, sieve)) {
+		if (is_truncatable_prime(i, sieve)) {
 			sum += i;
 			count++;
 		}
@@ -43,7 +43,7 @@ int main()
 }
 
 
-bool is_circular_prime(unsigned n, const SieveOfErathostenes &sieve)
+bool is_truncatable_prime(unsigned n, const SieveOfErathostenes &sieve)
 {
 	for (unsigned num = n; num != 0; num /= 10)
 		if (sieve.is_prime(num) == false)

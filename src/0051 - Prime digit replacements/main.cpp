@@ -115,5 +115,5 @@ unsigned make_num(int filled_pattern[], unsigned repeated_digit)
 
 /*
 	Solution:	121313
-	Avg time:	0.00832891s
+	Avg time:	0.0224266s
 */

@@ -35,7 +35,7 @@ int main()
 	while (true) {
 		for (unsigned k = 0; k < 4; k++) {
 			number += step;
-			if (MillerRabinPrimeTest::test(number))
+			if (MillerRabinPrimeTest::is_prime(number))
 				prime_count++;
 		}
 
